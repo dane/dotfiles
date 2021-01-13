@@ -1,0 +1,110 @@
+colors:
+  primary:
+    background: '0x1E1E1E'
+    foreground: '0xEEEEEE'
+
+  # Normal colors
+  normal:
+    black:   '0x666666'
+    red:     '0xAA6666'
+    green:   '0x66AA66'
+    yellow:  '0xbfb054'
+    blue:    '0x6666AA'
+    magenta: '0x9B449B'
+    cyan:    '0x54b0bf'
+    white:   '0xffffff'
+
+  bright:
+    black:   '0x666666'
+    red:     '0x66EEEE'
+    green:   '0xAA66AA'
+    yellow:  '0xbfb054'
+    blue:    '0xAAAA66'
+    magenta: '0x9B449B'
+    cyan:    '0x54b0bf'
+    white:   '0xFFFFFF'
+
+  dim:
+    black:   '0x666666'
+    red:     '0x66EEEE'
+    green:   '0xEE66EE'
+    yellow:  '0x666666'
+    blue:    '0xEEEE66'
+    magenta: '0x9B449B'
+    cyan:    '0x54b0bf'
+    white:   '0xFFFFFF'
+
+  indexed_colors: []
+
+env:
+  TERM: screen
+
+window:
+  startup_mode: Fullscreen
+  dimensions:
+    columns: 120
+    lines: 40
+
+  padding:
+    x: 15
+    y: 15
+
+  dynamic_padding: true
+  decorations: full
+
+scrolling:
+  history: 1000
+  multiplier: 3
+
+font:
+  normal:
+    family: "Source Code Pro"
+  size: 13
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: true
+
+bell:
+  animation: EaseOutExpo
+  color: '0xffffff'
+  duration: 0
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+  hide_when_typing: true
+  url:
+    launcher: None
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  save_to_clipboard: false
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+shell:
+  program: /bin/zsh
+
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: None
+  print_events: false
+  ref_test: false
+
+draw_bold_text_with_bright_colors: false
+background_opacity: 1.0
+key_bindings: []
+live_config_reload: true

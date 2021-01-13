@@ -1,0 +1,6 @@
+[submodule "config/nvim/pack/plugins/start/vim-go"]
+	path = config/nvim/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "config/nvim/pack/plugins/start/rust.vim"]
+	path = config/nvim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim

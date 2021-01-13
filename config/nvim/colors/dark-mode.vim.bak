@@ -1,0 +1,63 @@
+hi clear
+syntax enable
+
+let colors_name = "dark-mode"
+let dark_grey = "#555555"
+let white = "#EEEEEE"
+
+set background=dark
+set fillchars=stl:\ ,stlnc:\ ,vert:\|,fold:-,diff:-
+
+hi Normal        guifg=#EEEEEE guibg=none  ctermfg=255  ctermbg=none  cterm=none
+
+
+hi Comment    guifg=#555555  ctermfg=241  ctermbg=none  cterm=none
+hi LineNr     guifg=#555555  ctermfg=241  ctermbg=none  cterm=none
+hi VertSplit  guifg=#777777 guibg=none  ctermfg=241  ctermbg=none  cterm=none
+
+hi StatusLine    guifg=#777777  ctermfg=254  ctermbg=241  cterm=bold
+hi StatusLineNC  guifg=#777777  ctermfg=254  ctermbg=241  cterm=none
+hi ColorColumn   guifg=#777777  ctermfg=254  ctermbg=241  cterm=none
+
+hi Conceal       guifg=#F00  ctermfg=246  ctermbg=none  cterm=none
+hi Cursor        guifg=#FF0000 guibg=#FF0000  ctermfg=246  ctermbg=none  cterm=none
+hi CursorIM      guifg=#FF0000 guibg=#FF0000  ctermfg=246  ctermbg=none  cterm=none
+hi CursorColumn  guifg=#FF0000 guibg=#FF0000  ctermfg=246  ctermbg=none  cterm=none
+hi CursorLine    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Directory     guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi DiffAdd       guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi DiffChange    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi DiffDelete    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi DiffText      guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi ErrorMsg      guifg=#FFF  ctermfg=241  ctermbg=none  cterm=none
+hi Folded        guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi FoldColumn    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi SignColumn    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi IncSearch     guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi MatchParen    guifg=#FFF  ctermfg=255  ctermbg=none  cterm=bold
+hi ModeMsg       guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi MoreMsg       guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi NonText       guifg=#FFF  ctermfg=251  ctermbg=none  cterm=none
+hi Pmenu         guifg=#FFF  ctermfg=246  ctermbg=251   cterm=none
+hi PmenuSel      guifg=#FFF  ctermfg=253  ctermbg=246   cterm=bold
+hi PmenuSbar     guifg=#FFF  ctermfg=241  ctermbg=none  cterm=none
+hi PmenuThumb    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Question      guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Search        guifg=#FFF  ctermfg=255  ctermbg=246   cterm=bold
+hi SpecialKey    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi SpellBad      guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi SpellCap      guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi SpellLocal    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi SpellRare     guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi TabLine       guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi TabLineFill   guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi TabLineSel    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Title         guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Todo          guifg=#FFF  ctermfg=241  ctermbg=none  cterm=bold
+hi Visual        guifg=#FFF  ctermfg=254  ctermbg=246   cterm=none
+hi VisualNOS     guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi WarningMsg    guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi WildMenu      guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Menu          guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Scrollbar     guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none
+hi Tooltip       guifg=#FFF  ctermfg=246  ctermbg=none  cterm=none

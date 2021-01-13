@@ -1,0 +1,79 @@
+- hosts: localhost
+  vars_files:
+    - files/vars.yaml
+  tasks:
+    - name: Enable Flathub repository
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    - name: Install Flathub packages
+      command: flatpak install --assumeyes flathub {{ item }}
+      loop:
+        - com.discordapp.Discord
+        - com.dropbox.Client
+        - com.spotify.Client
+    - name: Add 1Password to RPM (step 1)
+      command:
+        warn: false
+        cmd: rpm --import https://downloads.1password.com/linux/keys/1password.asc
+      become: true
+    - name: Add 1Password to RPM (step 2)
+      command: echo -e "[1password]\nname=1Password\nbaseurl=https://downloads.1password.com/linux/rpm\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://downloads.1password.com/linux/keys/1password.asc" > /etc/yum.repos.d/1password.repo
+      become: true
+    - name: Update package manager
+      become: true
+      command:
+        warn: false
+        cmd: dnf update -y
+    - name: Install packages
+      become: true
+      package:
+        name:
+          - neovim
+          - git
+          - gpg
+          - tmux
+          - zsh
+          - ruby
+          - python3
+          - golang
+          - alacritty
+          - gnome-tweaks
+          - 1password
+          - jq
+          - make
+          - xclip
+          - rust
+    - name: Change shell to zsh
+      become: true
+      command: chsh -s /usr/bin/zsh
+    - name: Set ZDOTDIR in zshenv
+      lineinfile:
+        dest: '~/.zshenv'
+        regexp: 'export ZDOTDIR=~/.dotfiles/config/zsh'
+        line: 'export ZDOTDIR=~/.dotfiles/config/zsh'
+        create: true
+    - name: Configure Gnome
+      command: gsettings set {{ item }}
+      loop:
+        - org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+        - org.gnome.desktop.interface text-scaling-factor 1.25
+        - org.gnome.mutter dynamic-workspaces false
+        - org.gnome.desktop.wm.preferences num-workspaces 1
+        - org.gnome.desktop.input-sources xkb-options "['lv3:ralt_switch', 'caps:escape']"
+        - org.gnome.desktop.peripherals.mouse natural-scroll true
+        - org.gnome.desktop.background picture-uri "file:///${HOME}/.dotfiles/files/wallpaper.jpg"
+        - org.gnome.desktop.background primary-color '#000000000000'
+        - org.gnome.desktop.background secondary-color '#000000000000'
+    - name: Set hostname
+      command: hostname {{ hostname }}
+      become: true
+    - name: Link Git config
+      file:
+        src: '~/.dotfiles/config/git'
+        dest: '~/.config/git'
+        state: link
+        force: true
+    - name: Configure Git
+      command: git config -f ~/.local/git/config {{ item }}
+      loop:
+        - user.name '{{ git.name }}'
+        - user.email {{ git.email }}
