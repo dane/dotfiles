@@ -77,7 +77,3 @@
       loop:
         - user.name '{{ git.name }}'
         - user.email {{ git.email }}
-    - name: Pull neovim plugins
-      command:
-        cmd: git pull --recurse-submodules
-        chdir: '~/.dotfiles'
