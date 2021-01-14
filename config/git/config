@@ -48,3 +48,6 @@
 
 [credential]
 	helper = libsecret
+
+[pull]
+	rebase = true
