@@ -45,3 +45,6 @@
 
 [include]
 	path = ~/.local/git/config
+
+[credential]
+	helper = libsecret

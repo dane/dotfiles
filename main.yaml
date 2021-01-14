@@ -42,6 +42,7 @@
           - make
           - xclip
           - rust
+          - git-credential-libsecret
     - name: Change shell to zsh
       become: true
       command: chsh -s /usr/bin/zsh
