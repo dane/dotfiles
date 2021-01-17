@@ -11,3 +11,8 @@ Update local machine:
 ```
 ~/.dotfiles/update.sh
 ```
+
+## Local Configurations
+
+- `.zshrc` file sources `~/.local/zsh/zshrc`.
+- Git sources `~/.local/git/config`.
