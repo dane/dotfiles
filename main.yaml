@@ -67,12 +67,15 @@
     - name: Set hostname
       command: hostname {{ hostname }}
       become: true
-    - name: Link Git config
+    - name: Link configs that must be in XDG_CONFIG_HOME
       file:
-        src: '~/.dotfiles/config/git'
-        dest: '~/.config/git'
+        src: '~/.dotfiles/config/{{ item }}'
+        dest: '~/.config/{{ item }}'
         state: link
         force: true
+      loop:
+        - alacritty
+        - git
     - name: Configure Git
       command: git config -f ~/.local/git/config {{ item }}
       loop:
