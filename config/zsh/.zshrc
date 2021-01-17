@@ -1,12 +1,15 @@
-export EDITOR=nvim
-export GOPATH=~/Projects
+export XDG_CONFIG_HOME=~/.config
+export XDG_CONFIG_DIRS=~/.dotfiles/config:$XDG_CONFIG_DIRS
+
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
-export KEYTIMEOUT=1
+
+export GOPATH=~/Projects
 export GO111MODULE=on
-export GPG_TTY=$(tty)
-export XDG_CONFIG_DIRS=~/.dotfiles/config:$XDG_CONFIG_DIRS
+
+export EDITOR=nvim
+export KEYTIMEOUT=1
 
 autoload -U compinit; compinit
 autoload edit-command-line
