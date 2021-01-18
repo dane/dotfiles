@@ -43,6 +43,7 @@
           - xclip
           - rust
           - git-credential-libsecret
+          - podman-compose
     - name: Change shell to zsh
       become: true
       command: chsh -s /usr/bin/zsh
