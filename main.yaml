@@ -64,6 +64,7 @@
         - org.gnome.desktop.background picture-uri "file:///${HOME}/.dotfiles/files/wallpaper.jpg"
         - org.gnome.desktop.background primary-color '#000000000000'
         - org.gnome.desktop.background secondary-color '#000000000000'
+        - org.gnome.desktop.interface enable-hot-corners false
     - name: Set hostname
       command: hostname {{ hostname }}
       become: true
