@@ -10,6 +10,7 @@
         - com.discordapp.Discord
         - com.dropbox.Client
         - com.spotify.Client
+        - org.mozilla.firefox
     - name: Add 1Password to RPM (step 1)
       command:
         warn: false
@@ -66,6 +67,7 @@
         - org.gnome.desktop.background primary-color '#000000000000'
         - org.gnome.desktop.background secondary-color '#000000000000'
         - org.gnome.desktop.interface enable-hot-corners false
+        - org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'Alacritty.desktop', 'com.discordapp.Discord.desktop', 'com.spotify.Client.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
     - name: Set hostname
       command: hostname {{ hostname }}
       become: true
