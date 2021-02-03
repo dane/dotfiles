@@ -5,6 +5,11 @@ filetype plugin indent on
 let mapleader=',' " set leader to ,
 let g:rustfmt_autosave = 1
 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 set encoding=utf-8
 set nowrap
 set foldmethod=indent
