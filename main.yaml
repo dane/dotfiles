@@ -58,7 +58,7 @@
       command: gsettings set {{ item }}
       loop:
         - org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-        - org.gnome.desktop.interface text-scaling-factor 1.25
+        - org.gnome.desktop.interface text-scaling-factor 1.30
         - org.gnome.mutter dynamic-workspaces false
         - org.gnome.desktop.wm.preferences num-workspaces 1
         - org.gnome.desktop.input-sources xkb-options "['lv3:ralt_switch', 'caps:escape']"
