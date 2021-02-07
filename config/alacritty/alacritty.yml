@@ -58,7 +58,7 @@ scrolling:
 
 font:
   normal:
-    family: "Source Code Pro"
+    family: "Liberation Mono"
   size: 13
 
   offset:
