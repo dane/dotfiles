@@ -59,7 +59,7 @@ scrolling:
 font:
   normal:
     family: "Liberation Mono"
-  size: 13
+  size: 13.2
 
   offset:
     x: 0
