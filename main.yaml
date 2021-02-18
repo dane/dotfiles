@@ -12,6 +12,7 @@
         - com.spotify.Client
         - org.mozilla.firefox
         - us.zoom.Zoom
+        - org.gnome.Dictionary
     - name: Add 1Password to RPM (step 1)
       command:
         warn: false
