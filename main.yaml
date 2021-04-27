@@ -43,7 +43,6 @@
           - 1password
           - jq
           - make
-          - xclip
           - rust
           - git-credential-libsecret
           - podman
