@@ -48,6 +48,7 @@
           - git-credential-libsecret
           - podman
           - podman-compose
+          - wl-clipboard
     - name: Change shell to zsh
       become: true
       command: chsh -s /usr/bin/zsh
