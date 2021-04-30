@@ -36,6 +36,7 @@
           - tmux
           - zsh
           - ruby
+          - ruby-devel
           - python3
           - golang
           - alacritty
