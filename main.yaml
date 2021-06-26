@@ -7,6 +7,7 @@
     - name: Install Flathub packages
       command: flatpak install --assumeyes flathub {{ item }}
       loop:
+        - org.gnome.Extensions
         - com.discordapp.Discord
         - com.dropbox.Client
         - com.spotify.Client
@@ -40,7 +41,6 @@
           - python3
           - golang
           - alacritty
-          - gnome-tweaks
           - 1password
           - jq
           - make
