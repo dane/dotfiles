@@ -49,6 +49,7 @@
           - podman
           - podman-compose
           - wl-clipboard
+          - asciinema
     - name: Change shell to zsh
       become: true
       command: chsh -s /usr/bin/zsh
