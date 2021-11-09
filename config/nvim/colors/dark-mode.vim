@@ -5,6 +5,8 @@ let colors_name = "dark-mode"
 
 set background=dark
 set fillchars=stl:\ ,stlnc:\ ,vert:\|,fold:-,diff:-
+set textwidth=80
+let &colorcolumn=join(range(81, 1000),",")
 
 " Windowing
 hi LineNr       guifg=#777777  guibg=none     gui=none
@@ -29,6 +31,9 @@ hi ErrorMsg     guifg=#FFFFFF  guibg=none    gui=bold
 hi Comment      guifg=#777777  guibg=none  gui=none
 hi Folded       guifg=#777777  guibg=none  gui=none
 hi FoldColumn   guifg=#777777  guibg=none  gui=none
+
+" Show 80 character limit
+hi ColorColumn guibg=#222222 guifg=none gui=none
 
 " Dark grey & bold
 hi CommentTitle guifg=#777777  guibg=none  gui=bold
