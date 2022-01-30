@@ -11,6 +11,8 @@ export GO111MODULE=on
 export EDITOR=nvim
 export KEYTIMEOUT=1
 
+export GPG_TTY=$(tty)
+
 autoload -U compinit; compinit
 autoload edit-command-line
 
