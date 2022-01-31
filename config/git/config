@@ -43,14 +43,11 @@
 [gpg]
 	program = gpg
 
-[include]
-	path = ~/.local/git/config
-
-[credential]
-	helper = libsecret
-
 [pull]
 	rebase = true
 
 [init]
 	defaultBranch = main
+
+[include]
+	path = ~/.local/git/config
