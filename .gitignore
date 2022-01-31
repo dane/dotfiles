@@ -1,3 +1,5 @@
 config/git/credentials
 config/nvim/.netrwhist
 config/zsh/.zcompdump
+config/nvim/plugin/packer_compiled.lua
+
