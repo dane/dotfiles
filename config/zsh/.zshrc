@@ -1,4 +1,4 @@
-export XDG_CONFIG_HOME=~/.config
+export XDG_CONFIG_HOME=~/.dotfiles/config
 export XDG_CONFIG_DIRS=~/.dotfiles/config:$XDG_CONFIG_DIRS
 
 export HISTFILE=~/.zsh_history
