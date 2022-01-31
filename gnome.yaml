@@ -1,0 +1,61 @@
+- hosts: localhost
+  vars_files:
+    - files/vars.yaml
+  tasks:
+    - name: Enable Flathub repository
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    - name: Install Flathub packages
+      command: flatpak install --assumeyes flathub {{ item }}
+      loop:
+        - org.gnome.Extensions
+        - com.discordapp.Discord
+        - com.dropbox.Client
+        - com.spotify.Client
+        - org.mozilla.firefox
+        - us.zoom.Zoom
+        - org.gnome.Dictionary
+    - name: Add 1Password to RPM (step 1)
+      command:
+        warn: false
+        cmd: rpm --import https://downloads.1password.com/linux/keys/1password.asc
+      become: true
+    - name: Add 1Password to RPM (step 2)
+      command: echo -e "[1password]\nname=1Password\nbaseurl=https://downloads.1password.com/linux/rpm\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://downloads.1password.com/linux/keys/1password.asc" > /etc/yum.repos.d/1password.repo
+      become: true
+    - name: Update package manager
+      become: true
+      command:
+        warn: false
+        cmd: dnf update -y
+    - name: Install packages
+      become: true
+      package:
+        name:
+          - alacritty
+          - 1password
+          - wl-clipboard
+    - name: Configure Gnome
+      command: gsettings set {{ item }}
+      loop:
+        - org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+        - org.gnome.desktop.interface text-scaling-factor 1.30
+        - org.gnome.mutter dynamic-workspaces false
+        - org.gnome.desktop.wm.preferences num-workspaces 1
+        - org.gnome.desktop.input-sources xkb-options "['lv3:ralt_switch', 'caps:escape']"
+        - org.gnome.desktop.peripherals.mouse natural-scroll true
+        - org.gnome.desktop.background picture-uri "file:///${HOME}/.dotfiles/files/wallpaper.jpg"
+        - org.gnome.desktop.background primary-color '#000000000000'
+        - org.gnome.desktop.background secondary-color '#000000000000'
+        - org.gnome.desktop.interface enable-hot-corners false
+        - org.gnome.shell favorite-apps "['org.mozilla.firefox.desktop', 'Alacritty.desktop', 'com.discordapp.Discord.desktop', 'com.spotify.Client.desktop', 'org.gnome.Software.desktop', 'org.gnome.Nautilus.desktop']"
+    - name: Set hostname
+      command: hostname {{ hostname }}
+      become: true
+    - name: Link configs that must be in XDG_CONFIG_HOME
+      file:
+        src: '~/.dotfiles/config/{{ item }}'
+        dest: '~/.config/{{ item }}'
+        state: link
+        force: true
+      loop:
+        - alacritty
